@@ -10,7 +10,7 @@
 
 .theme-single-line .entry-title {
     font-weight: bold;
-    white-space: nowrap; /* Prevent line breaks */
+    /* white-space: nowrap; Prevent line breaks */
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%; /* Ensure title takes full width */
@@ -27,6 +27,7 @@
     font-style: italic;
     text-align: right;
     white-space: nowrap; /* Keep dates on one line */
+    width: 100%; /* Ensure date takes full width */
 }
 
 .theme-single-line .entry {
