@@ -35,4 +35,21 @@
     .education, .work-experience, .research {
         font-size: 11pt;
     }
+
+    /* Header print styles */
+    .header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        margin-bottom: 1.5em !important;
+    }
+
+    .portrait {
+        width: 120px !important;
+        height: 120px !important;
+    }
+
+    .name {
+        font-size: 22pt !important;
+    }
 }

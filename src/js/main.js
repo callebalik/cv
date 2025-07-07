@@ -141,6 +141,65 @@ class CVRenderer {
     }
 }
 
+// Portrait enlargement functionality
+class PortraitEnlarger {
+    constructor() {
+        this.portrait = document.querySelector('.portrait');
+        this.overlay = document.querySelector('#portraitOverlay');
+        this.isEnlarged = false;
+        this.init();
+    }
+
+    init() {
+        if (this.portrait && this.overlay) {
+            this.portrait.addEventListener('click', () => this.toggleEnlarged());
+            this.overlay.addEventListener('click', () => this.closeEnlarged());
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && this.isEnlarged) {
+                    this.closeEnlarged();
+                }
+            });
+        }
+    }
+
+    toggleEnlarged() {
+        if (this.isEnlarged) {
+            this.closeEnlarged();
+        } else {
+            this.openEnlarged();
+        }
+    }    openEnlarged() {
+        // Create enlarged image element
+        const enlargedImg = document.createElement('img');
+        enlargedImg.src = '../assets/portrait.png';
+        enlargedImg.classList.add('portrait-enlarged');
+        enlargedImg.alt = 'Carl Ollvik Aasa';
+        
+        // Show overlay and enlarged image
+        this.overlay.classList.add('active');
+        this.overlay.appendChild(enlargedImg);
+        this.isEnlarged = true;
+        
+        // Prevent body scroll
+        document.body.style.overflow = 'hidden';
+    }
+
+    closeEnlarged() {
+        // Remove enlarged image
+        const enlargedImg = this.overlay.querySelector('.portrait-enlarged');
+        if (enlargedImg) {
+            enlargedImg.remove();
+        }
+        
+        // Hide overlay
+        this.overlay.classList.remove('active');
+        this.isEnlarged = false;
+        
+        // Restore body scroll
+        document.body.style.overflow = '';
+    }
+}
+
 // Initialize the application
 document.addEventListener('DOMContentLoaded', () => {
     // Check if cvData is available (loaded from cv-data.js)
@@ -152,4 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.error('CV data not found. Make sure cv-data.js is loaded.');
     }
+
+    // Initialize portrait enlarger
+    new PortraitEnlarger();
 });

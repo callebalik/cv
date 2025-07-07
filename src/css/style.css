@@ -17,8 +17,29 @@ body {
 
 /* Header Section */
 .header {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 2em;
+}
+
+.portrait-container {
+    flex-shrink: 0;
+}
+
+.portrait {
+    width: 120px;
+    height: 175px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    display: block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    background-image: url('../../assets/portrait.png');
+    background-size: 130%; /* This controls the scale - 100% = normal, 150% = 1.5x larger */
+    background-position: 0% 10%; /* This controls the position */
+    background-repeat: no-repeat;
 }
 
 .name {
@@ -26,7 +47,9 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 1em;
+    text-align: right;
+    flex-grow: 1;
+    margin-left: 2em;
 }
 
 /* Section Styling */
@@ -124,4 +147,75 @@ body {
 .contact-list li {
     margin-bottom: 0.2em;
     font-style: italic;
+}
+
+/* Portrait enlargement styles */
+.portrait-enlarged {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center center;
+    border: 4px solid #333;
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.portrait-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.portrait-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1em;
+    }
+
+    .name {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .portrait {
+        width: 120px;
+        height: 144px;
+    }
+}
+
+@media (max-width: 400px) {
+    .portrait {
+        width: 100px;
+        height: 133px;
+    }
+
+    .name {
+        font-size: 20pt;
+    }
+
+    /* Responsive enlargement */
+    .portrait-enlarged {
+        width: 90vw;
+        height: 120vw;
+        max-width: 300px;
+        max-height: 400px;
+    }
 }
