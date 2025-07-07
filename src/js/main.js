@@ -40,9 +40,7 @@ class CVRenderer {
         if (personalData) {
             document.querySelector('.name').textContent = personalData.title;
         }
-    }
-
-    renderEducation() {
+    }    renderEducation() {
         const educationData = this.dataLoader.getEducationData();
         const container = document.querySelector('#education .section-content');
         if (!container) return;
@@ -51,18 +49,30 @@ class CVRenderer {
         educationData.forEach(item => {
             const entry = document.createElement('div');
             entry.className = 'entry';
-            entry.innerHTML = `
-                <div class="entry-header">
-                    <div class="entry-title">${item.title}</div>
-                    <div class="entry-date">${item.date}</div>
-                </div>
-                <div class="entry-institution">${item.institution}</div>
-            `;
+
+            // Check if single-line theme is active
+            if (document.body.classList.contains('theme-single-line')) {
+                entry.innerHTML = `
+                    <div class="entry-header">
+                        <span class="entry-title">${item.title}</span>
+                        <span class="entry-institution">${item.institution}</span>
+                        <span class="entry-date">${item.date}</span>
+                    </div>
+                `;
+            } else {
+                // Default layout
+                entry.innerHTML = `
+                    <div class="entry-header">
+                        <div class="entry-title">${item.title}</div>
+                        <div class="entry-date">${item.date}</div>
+                    </div>
+                    <div class="entry-institution">${item.institution}</div>
+                `;
+            }
+
             container.appendChild(entry);
         });
-    }
-
-    renderWork() {
+    }    renderWork() {
         const workData = this.dataLoader.getWorkData();
         const container = document.querySelector('#work .section-content');
         if (!container) return;
@@ -71,13 +81,27 @@ class CVRenderer {
         workData.forEach(item => {
             const entry = document.createElement('div');
             entry.className = 'entry';
-            entry.innerHTML = `
-                <div class="entry-header">
-                    <div class="entry-title">${item.title}</div>
-                    <div class="entry-date">${item.date}</div>
-                </div>
-                <div class="entry-institution">${item.institution}</div>
-            `;
+
+            // Check if single-line theme is active
+            if (document.body.classList.contains('theme-single-line')) {
+                entry.innerHTML = `
+                    <div class="entry-header">
+                        <span class="entry-title">${item.title}</span>
+                        <span class="entry-institution">${item.institution}</span>
+                        <span class="entry-date">${item.date}</span>
+                    </div>
+                `;
+            } else {
+                // Default layout
+                entry.innerHTML = `
+                    <div class="entry-header">
+                        <div class="entry-title">${item.title}</div>
+                        <div class="entry-date">${item.date}</div>
+                    </div>
+                    <div class="entry-institution">${item.institution}</div>
+                `;
+            }
+
             container.appendChild(entry);
         });
     }
@@ -146,10 +170,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check if cvData is available (loaded from cv-data.js)
     if (typeof cvData !== 'undefined') {
         const dataLoader = new CVDataLoader(cvData);
-        const renderer = new CVRenderer(dataLoader);
-        renderer.renderAll();
+        globalRenderer = new CVRenderer(dataLoader);
+        globalRenderer.renderAll();
         console.log('CV data loaded successfully');
     } else {
         console.error('CV data not found. Make sure cv-data.js is loaded.');
     }
 });
+
+// Global variables for renderer instance
+let globalRenderer = null;
+
+// Add a global render function
+function renderCV() {
+    if (globalRenderer) {
+        globalRenderer.renderAll();
+    }
+}

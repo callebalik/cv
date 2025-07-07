@@ -1,0 +1,35 @@
+/* Single Line Theme - 3 Column Table Layout */
+.theme-single-line .entry-header {
+    display: grid;
+    grid-template-columns: 4fr 3fr 2fr; /* Title takes 5 parts, institution 3 parts, date 2 parts */
+    gap: 1em; /* Space between columns */
+    width: 100%;
+    margin-bottom: 0;
+    align-items: baseline;
+}
+
+.theme-single-line .entry-title {
+    font-weight: bold;
+    white-space: nowrap; /* Prevent line breaks */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%; /* Ensure title takes full width */
+}
+
+.theme-single-line .entry-institution {
+    font-style: italic;
+    white-space: nowrap; /* Prevent line breaks */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.theme-single-line .entry-date {
+    font-style: italic;
+    text-align: right;
+    white-space: nowrap; /* Keep dates on one line */
+}
+
+.theme-single-line .entry {
+    margin-bottom: 0.4em;
+    line-height: 1.3;
+}
