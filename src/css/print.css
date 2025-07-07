@@ -1,4 +1,10 @@
 @media print {
+    * {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
     @page {
         size: A4;
         margin: 0.6in 0.75in;
@@ -46,7 +52,15 @@
 
     .portrait {
         width: 120px !important;
-        height: 120px !important;
+        height: 175px !important;
+        background-color: #d2d4d6 !important;
+        background-image: url('../../assets/portrait.png') !important;
+        background-size: 130% !important;
+        background-position: 0% 10% !important;
+        background-repeat: no-repeat !important;
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 
     .name {
