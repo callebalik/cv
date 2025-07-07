@@ -1,7 +1,7 @@
 // CV Data - embedded to avoid CORS issues
 const cvData = [
     {section: "personal", category: "name", title: "Carl Ollvik Aasa", institution: "", date: "", description: "", reference: ""},
-    {section: "education", category: "degree", title: "Läkarprogrammet", institution: "Lunds universitet", date: "Examen vårterminen 2025", description: "", reference: ""},
+    {section: "education", category: "degree", title: "Läkarprogrammet", institution: "Lunds universitet", date: "Examen Jun 2025", description: "", reference: ""},
     {section: "education", category: "degree", title: "Civilingenjörsprogrammet i Teknisk nanovetenskap", institution: "Lunds tekniska högskola", date: "2014 – 2016", description: "", reference: ""},
     {section: "work", category: "position", title: "Amanuens vid läkarprogrammet", institution: "Lunds Universitet", date: "Sep 2020 – Okt 2024", description: "", reference: ""},
     {section: "work", category: "position", title: "Teamkoordinator", institution: "Akutmottagningen i Lund", date: "Jun 2021 – Aug 2021", description: "", reference: ""},
