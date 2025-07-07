@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Document background -->
+  <rect x="15" y="10" width="70" height="80" fill="#ffffff" stroke="#333333" stroke-width="2" rx="3"/>
+  
+  <!-- Document lines representing text -->
+  <line x1="25" y1="20" x2="75" y2="20" stroke="#333333" stroke-width="1.5"/>
+  <line x1="25" y1="27" x2="65" y2="27" stroke="#666666" stroke-width="1"/>
+  <line x1="25" y1="33" x2="70" y2="33" stroke="#666666" stroke-width="1"/>
+  <!-- Profile section -->
+  <circle cx="40" cy="50" r="16" fill="#e6e6e6" stroke="#333333" stroke-width="1"/>
+  <circle cx="40" cy="45" r="5" fill="#333333"/>
+  <path d="M24 60 Q40 52 56 60" fill="#333333"/>
+  
+  <!-- Skills/content lines -->
+  <line x1="62" y1="35" x2="75" y2="35" stroke="#666666" stroke-width="1"/>
+  <line x1="62" y1="42" x2="70" y2="42" stroke="#666666" stroke-width="1"/>
+  <line x1="62" y1="49" x2="75" y2="49" stroke="#666666" stroke-width="1"/>
+  <line x1="62" y1="56" x2="70" y2="56" stroke="#666666" stroke-width="1"/>
+  <line x1="62" y1="63" x2="75" y2="63" stroke="#666666" stroke-width="1"/>
+  
+  <!-- Experience section -->
+  <line x1="25" y1="62" x2="75" y2="62" stroke="#333333" stroke-width="1.5"/>
+  <line x1="25" y1="68" x2="65" y2="68" stroke="#666666" stroke-width="1"/>
+  <line x1="25" y1="73" x2="60" y2="73" stroke="#666666" stroke-width="1"/>
+  <line x1="25" y1="78" x2="70" y2="78" stroke="#666666" stroke-width="1"/>
+  
+  <!-- CV label -->
+  <text x="50" y="96" text-anchor="middle" font-family="serif" font-size="8" fill="#333333" font-weight="bold">CV</text>
+</svg>
