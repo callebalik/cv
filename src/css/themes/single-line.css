@@ -1,0 +1,33 @@
+/* Single Line Theme */
+.theme-single-line .entry-header {
+    display: flex;
+    width: 100%;
+    margin-bottom: 0;
+    align-items: baseline;
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+.theme-single-line .entry-title {
+    font-weight: bold;
+    margin-right: 0.5em;
+    flex-shrink: 0; /* Don't shrink the title */
+}
+
+.theme-single-line .entry-institution {
+    font-style: italic;
+    margin-right: 0.5em;
+    flex: 1; /* Take up remaining space */
+    min-width: 0; /* Allow flexbox to shrink below content size */
+}
+
+.theme-single-line .entry-date {
+    font-style: italic;
+    text-align: right;
+    margin-left: auto; /* This pushes the date to the right */
+    flex-shrink: 0; /* Don't shrink the date */
+}
+
+.theme-single-line .entry {
+    margin-bottom: 0.4em;
+    line-height: 1.3;
+}

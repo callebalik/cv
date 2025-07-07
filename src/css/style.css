@@ -125,3 +125,31 @@ body {
     margin-bottom: 0.2em;
     font-style: italic;
 }
+
+/* Theme Switcher */
+.theme-switcher {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 10pt;
+    z-index: 1000;
+}
+
+.theme-switcher label {
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.theme-switcher input {
+    margin-right: 5px;
+}
+
+@media print {
+    .theme-switcher {
+        display: none;
+    }
+}
